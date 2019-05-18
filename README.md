@@ -1,4 +1,4 @@
-# Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/Cretezy/cookies.svg)](https://travis-ci.com/Cretezy/cookies) [![Codecov](https://img.shields.io/codecov/c/github/Cretezy/cookies.svg)](https://codecov.io/gh/Cretezy/cookies)
+# Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/Cretezy/routex-cookies.svg)](https://travis-ci.com/Cretezy/routex-cookies) [![Codecov](https://img.shields.io/codecov/c/github/Cretezy/routex-cookies.svg)](https://codecov.io/gh/Cretezy/routex-cookies)
 
 Cookies for [Routex](https://www.npmjs.com/package/routex).
 
