@@ -53,10 +53,20 @@ it("Sets cookies with options", () => {
   return request(app.handler)
     .get("/")
     .expect(200)
-    .expect(res => expect(res.header["set-cookie"][0]).toBe("firstName=john"))
+    // Node 10 and above separates headers when parsing.
     .expect(res =>
-      expect(res.header["set-cookie"][1]).toBe(
-        "lastName=john; Domain=test.test; HttpOnly"
-      )
+      expect(
+        [
+          "firstName=john",
+          "firstName=john,lastName=john; Domain=test.test; HttpOnly"
+        ].includes(res.header["set-cookie"][0])
+      ).toBeTruthy()
+    )
+    .expect(res =>
+      expect(
+        ["lastName=john; Domain=test.test; HttpOnly", undefined].includes(
+          res.header["set-cookie"][1]
+        )
+      ).toBeTruthy()
     );
 });
