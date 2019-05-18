@@ -38,18 +38,23 @@ app.listen(port).then(() => console.log(`Listening on ${port}`));
 You may also pass options to the `cookies()` middleware:
 
 - [`parse`](https://www.npmjs.com/package/cookie#options):
-  | Option | Type |
+
+  | Option   | Type                 |
+  | -------- | -------------------- |
   | `decode` | `(string) => string` |
+
 - [`serialize`](https://www.npmjs.com/package/cookie#options-1):
-  | Option | Type |
-  | `domain` | `string` |
-  | `encode` | `(string) => string` |
-  | `expires` | `Date` |
-  | `httpOnly` | `boolean` |
-  | `maxAge` | `number` |
-  | `path` | `string` |
+
+  | Option     | Type                         |
+  | ---------- | ---------------------------- |
+  | `domain`   | `string`                     |
+  | `encode`   | `(string) => string`         |
+  | `expires`  | `Date`                       |
+  | `httpOnly` | `boolean`                    |
+  | `maxAge`   | `number`                     |
+  | `path`     | `string`                     |
   | `sameSite` | `boolean | 'lax' | 'strict'` |
-  | `secure` | `boolean` |
+  | `secure`   | `boolean`                    |
 
 ## Get
 
@@ -76,15 +81,16 @@ app.get("/", ctx => {
 
 You may also pass [options](https://www.npmjs.com/package/cookie#options-1) (see link for more details) as a third parameters:
 
-| Option | Type |
-| `domain` | `string` |
-| `encode` | `(string) => string` |
-| `expires` | `Date` |
-| `httpOnly` | `boolean` |
-| `maxAge` | `number` |
-| `path` | `string` |
+| Option     | Type                         |
+| ---------- | ---------------------------- |
+| `domain`   | `string`                     |
+| `encode`   | `(string) => string`         |
+| `expires`  | `Date`                       |
+| `httpOnly` | `boolean`                    |
+| `maxAge`   | `number`                     |
+| `path`     | `string`                     |
 | `sameSite` | `boolean | 'lax' | 'strict'` |
-| `secure` | `boolean` |
+| `secure`   | `boolean`                    |
 
 ## Support
 
