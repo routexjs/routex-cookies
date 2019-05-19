@@ -50,23 +50,25 @@ it("Sets cookies with options", () => {
     ctx.body = new TextBody("");
   });
 
-  return request(app.handler)
-    .get("/")
-    .expect(200)
-    // Node 10 and above separates headers when parsing.
-    .expect(res =>
-      expect(
-        [
-          "firstName=john",
-          "firstName=john,lastName=john; Domain=test.test; HttpOnly"
-        ].includes(res.header["set-cookie"][0])
-      ).toBeTruthy()
-    )
-    .expect(res =>
-      expect(
-        ["lastName=john; Domain=test.test; HttpOnly", undefined].includes(
-          res.header["set-cookie"][1]
-        )
-      ).toBeTruthy()
-    );
+  return (
+    request(app.handler)
+      .get("/")
+      .expect(200)
+      // Node 10 and above separates headers when parsing.
+      .expect(res =>
+        expect(
+          [
+            "firstName=john",
+            "firstName=john,lastName=john; Domain=test.test; HttpOnly"
+          ].includes(res.header["set-cookie"][0])
+        ).toBeTruthy()
+      )
+      .expect(res =>
+        expect(
+          ["lastName=john; Domain=test.test; HttpOnly", undefined].includes(
+            res.header["set-cookie"][1]
+          )
+        ).toBeTruthy()
+      )
+  );
 });

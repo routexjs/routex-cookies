@@ -1,12 +1,9 @@
 import { CookieSerializeOptions } from "cookie";
 
-interface ICtxCookies {
-  cookies: ICookies;
-}
-
 declare module "routex" {
-  // tslint:disable-next-line:no-empty-interface
-  export interface ICtx extends ICtxCookies {}
+  export interface ICtx {
+    cookies: ICookies;
+  }
 }
 
 export interface ICookies {
