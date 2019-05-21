@@ -1,7 +1,7 @@
 import { CookieSerializeOptions } from "cookie";
 
 declare module "routex" {
-  export interface ICtx {
+  interface ICtx {
     cookies: ICookies;
   }
 }
@@ -9,9 +9,10 @@ declare module "routex" {
 export interface ICookies {
   all: { [key: string]: string };
   get: (prop: string) => string | undefined;
+  remove: (prop: string, serializeOptions?: CookieSerializeOptions) => void;
   set: (
     prop: string,
-    value: string,
+    value: string | null,
     serializeOptions?: CookieSerializeOptions
   ) => void;
 }

@@ -35,6 +35,26 @@ it("Sets cookie", () => {
     .expect(res => res.header["set-cookie"] === "name=john");
 });
 
+it("Removes cookie", () => {
+  const app = new Routex();
+
+  app.middleware(cookies());
+
+  app.get("/", ctx => {
+    ctx.cookies.remove("name");
+    ctx.body = new TextBody("");
+  });
+
+  return request(app.handler)
+    .get("/")
+    .expect(200)
+    .expect(res =>
+      expect(res.header["set-cookie"][0]).toBe(
+        "name=; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+      )
+    );
+});
+
 it("Sets cookies with options", () => {
   const app = new Routex();
 
