@@ -1,8 +1,10 @@
 # Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/Cretezy/routex-cookies.svg)](https://travis-ci.com/Cretezy/routex-cookies) [![Codecov](https://img.shields.io/codecov/c/github/Cretezy/routex-cookies.svg)](https://codecov.io/gh/Cretezy/routex-cookies)
 
-Cookies for [Routex](https://www.npmjs.com/package/routex).
+Cookies for [Routex](https://routex.netlify.com).
 
-## Usage
+[Documentation](https://routex.netlify.com/docs/packages/cookies) - [GitHub](https://github.com/Cretezy/routex-cookies)
+
+## Example
 
 Install:
 
@@ -24,73 +26,22 @@ const app = new Routex();
 app.use(cookies());
 
 app.get("/", ctx => {
+  // Get cookie
   const name = ctx.cookies.get("name");
+
   if (!name) {
+    // Set cookie
     ctx.cookies.set("name", "john");
   }
+
+  // Remove cookie
+  ctx.cookies.remove("name");
 
   ctx.body = new TextBody("Set name cookie");
 });
 
 app.listen(port).then(() => console.log(`Listening on ${port}`));
 ```
-
-You may also pass options to the `cookies()` middleware:
-
-- [`parse`](https://www.npmjs.com/package/cookie#options):
-
-  | Option   | Type                 |
-  | -------- | -------------------- |
-  | `decode` | `(string) => string` |
-
-- [`serialize`](https://www.npmjs.com/package/cookie#options-1):
-
-  | Option     | Type                         |
-  | ---------- | ---------------------------- |
-  | `domain`   | `string`                     |
-  | `encode`   | `(string) => string`         |
-  | `expires`  | `Date`                       |
-  | `httpOnly` | `boolean`                    |
-  | `maxAge`   | `number`                     |
-  | `path`     | `string`                     |
-  | `sameSite` | `boolean | 'lax' | 'strict'` |
-  | `secure`   | `boolean`                    |
-
-## Get
-
-You can use `ctx.cookies.get(cookie)` or `ctx.cookies.all` to get cookies:
-
-```js
-app.get("/a", ctx => {
-  const name = ctx.cookies.get("name");
-});
-app.get("/b", ctx => {
-  const { name } = ctx.cookies.all;
-});
-```
-
-## Set
-
-You can use `ctx.cookies.set(cookie, value)` set cookies:
-
-```js
-app.get("/", ctx => {
-  ctx.cookies.set("name", "john");
-});
-```
-
-You may also pass [options](https://www.npmjs.com/package/cookie#options-1) (see link for more details) as a third parameters:
-
-| Option     | Type                         |
-| ---------- | ---------------------------- |
-| `domain`   | `string`                     |
-| `encode`   | `(string) => string`         |
-| `expires`  | `Date`                       |
-| `httpOnly` | `boolean`                    |
-| `maxAge`   | `number`                     |
-| `path`     | `string`                     |
-| `sameSite` | `boolean | 'lax' | 'strict'` |
-| `secure`   | `boolean`                    |
 
 ## Support
 
