@@ -7,7 +7,7 @@
     "cookies",
     "routex"
   ],
-  "homepage": "https://routex.netlify.com/docs/packages/cookies",
+  "homepage": "https://routex.js.org/docs/packages/cookies",
   "repository": {
     "type": "git",
     "url": "https://github.com/routexjs/routex-cookies"
