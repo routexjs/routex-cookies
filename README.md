@@ -1,8 +1,8 @@
-# Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/Cretezy/routex-cookies.svg)](https://travis-ci.com/Cretezy/routex-cookies) [![Codecov](https://img.shields.io/codecov/c/github/Cretezy/routex-cookies.svg)](https://codecov.io/gh/Cretezy/routex-cookies) [![Greenkeeper badge](https://badges.greenkeeper.io/Cretezy/routex-cookies.svg)](https://greenkeeper.io/)
+# Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/routexjs/routex-cookies.svg)](https://travis-ci.com/routexjs/routex-cookies) [![Codecov](https://img.shields.io/codecov/c/github/routexjs/routex-cookies.svg)](https://codecov.io/gh/routexjs/routex-cookies) [![Greenkeeper badge](https://badges.greenkeeper.io/routexjs/routex-cookies.svg)](https://greenkeeper.io/)
 
 Cookies for [Routex](https://routex.netlify.com).
 
-[Documentation](https://routex.netlify.com/docs/packages/cookies) - [GitHub](https://github.com/Cretezy/routex-cookies)
+[Documentation](https://routex.netlify.com/docs/packages/cookies) - [GitHub](https://github.com/routexjs/routex-cookies)
 
 ## Example
 
@@ -47,4 +47,4 @@ app.listen(port).then(() => console.log(`Listening on ${port}`));
 
 We support all currently active and maintained [Node LTS versions](https://github.com/nodejs/Release), include current Node versions.
 
-Please file feature requests and bugs at the [issue tracker](https://github.com/Cretezy/routex-cookies/issues).
+Please file feature requests and bugs at the [issue tracker](https://github.com/routexjs/routex-cookies/issues).

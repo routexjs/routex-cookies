@@ -10,7 +10,7 @@
   "homepage": "https://routex.netlify.com/docs/packages/cookies",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Cretezy/routex-cookies"
+    "url": "https://github.com/routexjs/routex-cookies"
   },
   "license": "MIT",
   "author": "Charles Crete <charles@cretezy.com>",
