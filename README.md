@@ -25,7 +25,7 @@ const app = new Routex();
 
 app.use(cookies());
 
-app.get("/", ctx => {
+app.get("/", (ctx) => {
   // Get cookie
   const name = ctx.cookies.get("name");
 

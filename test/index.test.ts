@@ -7,7 +7,7 @@ it("Gets cookie", () => {
 
   app.middleware(cookies());
 
-  app.get("/", ctx => {
+  app.get("/", (ctx) => {
     // @ts-ignore
     ctx.body = new TextBody(ctx.cookies.get("name") + ctx.cookies.all.name);
   });
@@ -24,7 +24,7 @@ it("Sets cookie", () => {
 
   app.middleware(cookies());
 
-  app.get("/", ctx => {
+  app.get("/", (ctx) => {
     ctx.cookies.set("name", "john");
     ctx.body = new TextBody("");
   });
@@ -32,7 +32,7 @@ it("Sets cookie", () => {
   return request(app.handler)
     .get("/")
     .expect(200)
-    .expect(res => res.header["set-cookie"] === "name=john");
+    .expect((res) => res.header["set-cookie"] === "name=john");
 });
 
 it("Removes cookie", () => {
@@ -40,7 +40,7 @@ it("Removes cookie", () => {
 
   app.middleware(cookies());
 
-  app.get("/", ctx => {
+  app.get("/", (ctx) => {
     ctx.cookies.remove("name");
     ctx.body = new TextBody("");
   });
@@ -48,7 +48,7 @@ it("Removes cookie", () => {
   return request(app.handler)
     .get("/")
     .expect(200)
-    .expect(res =>
+    .expect((res) =>
       expect(res.header["set-cookie"][0]).toBe(
         "name=; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
       )
@@ -60,11 +60,11 @@ it("Sets cookies with options", () => {
 
   app.middleware(cookies());
 
-  app.get("/", ctx => {
+  app.get("/", (ctx) => {
     ctx.cookies.set("firstName", "john");
     ctx.cookies.set("lastName", "john", {
       domain: "test.test",
-      httpOnly: true
+      httpOnly: true,
     });
 
     ctx.body = new TextBody("");
@@ -75,15 +75,15 @@ it("Sets cookies with options", () => {
       .get("/")
       .expect(200)
       // Node 10 and above separates headers when parsing.
-      .expect(res =>
+      .expect((res) =>
         expect(
           [
             "firstName=john",
-            "firstName=john,lastName=john; Domain=test.test; HttpOnly"
+            "firstName=john,lastName=john; Domain=test.test; HttpOnly",
           ].includes(res.header["set-cookie"][0])
         ).toBeTruthy()
       )
-      .expect(res =>
+      .expect((res) =>
         expect(
           ["lastName=john; Domain=test.test; HttpOnly", undefined].includes(
             res.header["set-cookie"][1]

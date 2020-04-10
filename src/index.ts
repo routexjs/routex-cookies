@@ -2,7 +2,7 @@ import {
   CookieParseOptions,
   CookieSerializeOptions,
   parse,
-  serialize
+  serialize,
 } from "cookie";
 import { Middleware } from "routex";
 import { ICookies } from "./types/routex";
@@ -20,8 +20,8 @@ interface ICookieToSet {
   serializeOptions?: CookieSerializeOptions;
 }
 
-export default function(options: ICookieOptions = {}): Middleware {
-  return ctx => {
+export default function (options: ICookieOptions = {}): Middleware {
+  return (ctx) => {
     // Get cookies from headers
     const { cookie } = ctx.req.headers;
 
@@ -39,7 +39,7 @@ export default function(options: ICookieOptions = {}): Middleware {
         prop: string,
         value: string | null,
         serializeOptions?: CookieSerializeOptions
-      ) => cookiesToSet.push({ prop, value, serializeOptions })
+      ) => cookiesToSet.push({ prop, value, serializeOptions }),
     };
 
     // Attach to ctx
@@ -54,7 +54,7 @@ export default function(options: ICookieOptions = {}): Middleware {
             serialize(prop, value || "", {
               ...(!value && { expires: new Date(0) }),
               ...options.serialize,
-              ...serializeOptions
+              ...serializeOptions,
             })
           )
         );
