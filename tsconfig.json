@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "es2015",
+    "target": "ES2015",
     "module": "commonjs",
-    "lib": ["es2015", "es2016", "es2017", "es2018"],
+    "lib": ["ES2019"],
     "strict": true,
     "sourceMap": true,
     "declaration": true,
