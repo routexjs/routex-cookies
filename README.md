@@ -1,4 +1,4 @@
-# Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/routexjs/routex-cookies.svg)](https://travis-ci.com/routexjs/routex-cookies) [![Codecov](https://img.shields.io/codecov/c/github/routexjs/routex-cookies.svg)](https://codecov.io/gh/routexjs/routex-cookies) [![Greenkeeper badge](https://badges.greenkeeper.io/routexjs/routex-cookies.svg)](https://greenkeeper.io/)
+# Routex Cookies [![npm](https://img.shields.io/npm/v/@routex/cookies.svg)](https://www.npmjs.com/package/@routex/cookies) [![Travis CI](https://img.shields.io/travis/com/routexjs/routex-cookies.svg)](https://travis-ci.com/routexjs/routex-cookies) [![Codecov](https://img.shields.io/codecov/c/github/routexjs/routex-cookies.svg)](https://codecov.io/gh/routexjs/routex-cookies)
 
 Cookies for [Routex](https://routex.js.org).
 
